@@ -10,5 +10,5 @@ Ziel ist später zu Cloud Foundry zu deploy
 - Post Inference ✅
 - Get Inference ✅
 - Get Datasets ✅
-- Nutzeroberfläche ‼️ (Fehlt)
-- Eingabe von Nutzer richtig verarbeiten ‼️ (Fehlt) 
+- Nutzeroberfläche !‼️ (Fehlt)
+- Eingabe von Nutzer richtig verarbeiten !‼️ (Fehlt) 
