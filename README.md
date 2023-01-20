@@ -12,3 +12,8 @@ Ziel ist später zu Cloud Foundry zu deploy
 - Get Datasets ✅
 - Nutzeroberfläche ‼️ (Fehlt)
 - Eingabe von Nutzer richtig verarbeiten ‼️ (Fehlt) 
+
+Nützliche Links zum besseren Verständnis:
+
+- https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/894afc838ee54c0f8c7f7381a9dae27a.html?locale=en-US
+- https://api.sap.com/api/business_entity_recognition_api/overview
