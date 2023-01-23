@@ -1,40 +1,34 @@
-<html lang="en">
-    <head>
-        <!--%- include('./views/head'); %-->
-        <script src="jquery-3.1.1.min.js"></script>
-        <link href="semantic.min.css" rel="stylesheet" type="text/css"/>
-        <script src="semantic.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+        <title>Business Entity Recognition</title>
+</head>
 
-    </head>
-    <style>
-        .maintContainer{
-            padding-left: 28%;
-            padding-top: 5%;
-        }
-        .listItems{
-            width: 200px;
-            padding-bottom: 6px;
-            border-bottom-width: 1px !important;
-            border-bottom-style: ridge !important;
-        }
-        .ui.items>.item .meta{
-            line-height: 1.4em !important;
-        }
-        .ui.items{
-            width: 24rem;
-        }
-        .headTitle{
-            padding-bottom: 2rem;
-        }
-    </style>
-    <body class="ui container maintContainer">
-        <%- include('./head'); %>
-        <% if (clientList.length > 0 ) { %>
-            <%- include('./userlist'); %>
-        <% } %>
+<body>
+    <form action="" method="post"> 
+        <div class = "container">  
+            <label for="text" id="title">Text zur Erkennung</label>
+            <div class="campo">
+                <br>
+                <textarea rows="6" style="width: 26em" id="text" name="text"></textarea>
+            </div>
+          <select id="framework">
+            <option value="1">Address</option>
+            <option value="2">Email</option>
+            <option value="3">Generic</option>
+            <option value="4">Invoice</option>
+          </select>
+          <br>
+          <br>
+           <input type="submit" value="Check" id="submit" placeholder="Text eingeben..."/>
+        </div> 
+     </form>
 
-    </body>
-</html> 
-</html> 
-</html>
+
+</body>
+
 </html>

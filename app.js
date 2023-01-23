@@ -14,16 +14,13 @@ app.use(express.static(__dirname + "/scripts"));
 // index page
 
 app.get("/", async function(req, res) {
-  //Getting fresh data
-  //newData = data;
   var newData = await getData.getDatasetres();
   //var postInference = await getData.postInference();
   console.log({newData});
   //console.log({postInference})
-  inference = await getData.getInference('949c2a91-5fb3-43bd-877f-cf218dea06bc')
-  var result = inference.data.result
-  console.log({result})
-  res.render("./index", { clientList: newData });
+  var result = inference
+  console.log(result)
+  res.render("./index");
 });
 
 app.listen(8080);
