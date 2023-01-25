@@ -77,11 +77,11 @@ const getDatasetres = async () =>{
 
 }
 
-const postInference = async() =>{
+const postInference = async(text,modelName) =>{
     const dataToken =  await getUAAToken();
     var data = JSON.stringify({
-        "text": "Hello, I would like to know the status of the invoice 456789. Regards, John, demo@hotmail.com",
-        "modelName": "sap_email_business_entity",
+        "text": text,
+        "modelName": modelName,
         "modelVersion": "1"
       });
     const urlAPI = berSRVCred.url+"/api/v1/inference/jobs"

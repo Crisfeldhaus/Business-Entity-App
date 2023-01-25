@@ -18,8 +18,8 @@ app.get("/", async function(req, res) {
   //var postInference = await getData.postInference();
   console.log({newData});
   //console.log({postInference})
-  var result = inference
-  console.log(result)
+  //var result = inference
+  //console.log(result)
   res.render("./index");
 });
 
