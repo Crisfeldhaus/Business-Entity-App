@@ -77,7 +77,7 @@ const getDatasetres = async () =>{
 
 }
 
-const postInference = async(text,modelName) =>{
+const postInference = async  (text,modelName) =>{
     const dataToken =  await getUAAToken();
     var data = JSON.stringify({
         "text": text,
@@ -87,13 +87,13 @@ const postInference = async(text,modelName) =>{
     const urlAPI = berSRVCred.url+"/api/v1/inference/jobs"
 
     try{   
-    const retRes = await axios(urlAPI,{
-        method:"post",
-        headers:{
-            Authorization:"Bearer " + dataToken.data.access_token,
-            "Content-Type": "application/json"
-        },
-        data:data
+        const retRes = await axios(urlAPI,{
+            method:"post",
+            headers:{
+                Authorization:"Bearer " + dataToken.data.access_token,
+                "Content-Type": "application/json"
+            },
+            data:data
         });
         console.log("Info: "+retRes.data);
         return retRes.data;
@@ -103,7 +103,7 @@ const postInference = async(text,modelName) =>{
     }
 }
 
-const getInference = async(inferenceId) => {
+const getInference =  async(inferenceId) => {
     const dataToken =  await getUAAToken();
     const urlAPI = berSRVCred.url+"/api/v1/inference/jobs/"+inferenceId;
     try{
