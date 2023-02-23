@@ -113,8 +113,8 @@ const getInference =  async(inferenceId) => {
                 Authorization: "Bearer "+ dataToken.data.access_token
             }
         })
-        console.log({inferenceRes})
-        return inferenceRes.data
+        console.log(inferenceRes.data.data.result)
+        return inferenceRes.data.data.result
     }catch(err){
         console.log({err})
         return[]

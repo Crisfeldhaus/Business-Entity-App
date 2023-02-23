@@ -37,7 +37,7 @@ app.get("/",  function(req, res) {
   //var result = inference
   //console.log(result)
   var result = req.session.response
-  res.render("../scripts/index",{data:result});
+  res.render("../scripts/index",{data:result.data});
 });
 
 app.post("/postinference",async (req,res)=>{
@@ -54,16 +54,23 @@ app.post("/postinference",async (req,res)=>{
   
   getData.postInference(text,dataModel).then((response)=>{
     var id = response.data.id
-    getData.getInference(id).then((result)=>{
-      console.log({result})
-      req.session.response = result
-    })
+    // getData.getInference(id).then((result)=>{
+    //   console.log({result})
+    //   req.session.response = result
+    // })
+    setTimeout(()=>{
+      res.redirect("/get/inference/"+id)
+    },8000)
+    
   })
+  
 })
 
-app.get("/getinference",async (req,res)=>{
-  
-
+app.get("/get/inference/:id",async (req,res)=>{
+ var id= req.params.id
+ var result_inference = await getData.getInference(id);
+ var str = JSON.stringify(result_inference,null,2)
+ res.render("../scripts/result",{data:str})
 })
 
 app.listen(8080);
