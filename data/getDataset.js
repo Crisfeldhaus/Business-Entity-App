@@ -1,7 +1,7 @@
 const axios = require("axios");
 const xsenv = require("@sap/xsenv");
 
-xsenv.loadEnv();
+//xsenv.loadEnv();
 
 //const destSRVCred = xsenv.getServices({ destination:{tag:"destination"}}).destination;
 //const uaaSRVCred = xsenv.getServices({ uaa:{tag:"xsuaa"}}).uaa;
@@ -77,12 +77,12 @@ const getDatasetres = async () =>{
 
 }
 
-const postInference = async  (text,modelName) =>{
+const postInference = async  (text,modelName,modelVersion) =>{
     const dataToken =  await getUAAToken();
     var data = JSON.stringify({
         "text": text,
         "modelName": modelName,
-        "modelVersion": "1"
+        "modelVersion": modelVersion
       });
     const urlAPI = berSRVCred.url+"/api/v1/inference/jobs"
 
@@ -113,7 +113,7 @@ const getInference =  async(inferenceId) => {
                 Authorization: "Bearer "+ dataToken.data.access_token
             }
         })
-        console.log(inferenceRes.data.data.result)
+        //console.log(inferenceRes.data.data.result)
         return inferenceRes.data.data.result
     }catch(err){
         console.log({err})

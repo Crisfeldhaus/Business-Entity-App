@@ -27,3 +27,11 @@ input, select, textarea, button {
   color: #380B61;
   margin-left: 7%;
 } 
+form{
+ margin: 15px
+}
+
+h1,h2{
+  font-family:sans-serif;
+  color: #380B61;
+}

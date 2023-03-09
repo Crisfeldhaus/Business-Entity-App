@@ -11,11 +11,12 @@
 <body>
     <form method="post" id="postInference" action="/postinference"> 
         <div class = "container">  
-            <label for="text" id="title" name="text">Text zur Erkennung</label>
+            <label for="text" id="title" name="text">Business Entity Recognition</label>
             <div class="campo">
                 <br>
                 <textarea rows="6" style="width: 26em" id="text" name="text"></textarea>
             </div>
+            <br>
           <select name="dataModel" id="framework">
             <option value="sap_address_entity">Address</option>
             <option value="sap_email_business_entity">Email</option>
@@ -28,11 +29,4 @@
     </form>
     <br>
     <br>
-    <div id="Response">
-        <h1>RESULT:</h1>
-        <p id="add_after_me">
-            <%= data %> </p>
-    </div>
-    <!-- <script type="module" src = "./indexController.js"></script> -->
-</body>
 </html>

@@ -1,8 +1,6 @@
 applications:
-  - name: demoAppOnPrem
+  - name: BusinessEntityRecognition
     memory: 256M
     path: ./
     services:
-      - S4D1909-uaa-srv
-      - S4D1909-dst-srv
-      - S4D1909-connect-srv
+      - ber-trial
